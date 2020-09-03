@@ -1,6 +1,6 @@
 package com.corejava.java8.stream;
 
-public class StreamAAOverview {
+public class Overview {
 
 	/*
 	 * The features of Java stream are –
