@@ -1,18 +1,6 @@
-package com.corejava.java8.stream.lamdaexpression;
+package com.corejava.java8.functionalinterface;
 
 public class Overview {
-
-	/*
-	 * Lambda expression facilitates functional programming, and simplifies the
-	 * development a lot.
-	 * 
-	 * (argument-list) -> {body}
-	 */
-
-	/*
-	 * Java lambda expression is treated as a function, so compiler does not create
-	 * .class file.
-	 */
 
 	/*
 	 * Functional Interface:
@@ -36,4 +24,5 @@ public class Overview {
 	 * Lambda expression provides implementation of functional interface.
 	 * 
 	 */
+	
 }

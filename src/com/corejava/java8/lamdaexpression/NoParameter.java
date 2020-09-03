@@ -1,4 +1,4 @@
-package com.corejava.java8.stream.lamdaexpression;
+package com.corejava.java8.lamdaexpression;
 
 public class NoParameter {
 
