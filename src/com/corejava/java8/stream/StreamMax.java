@@ -1,11 +1,11 @@
-package com.corejava.java8;
+package com.corejava.java8.stream;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
 
-public class StreamMin {
+public class StreamMax {
 
 	public static void main(String args[]) {
 		List<String> stringList = new ArrayList<String>();
@@ -15,11 +15,10 @@ public class StreamMin {
 		
 		Stream<String> stream = stringList.stream();
 		
-		Optional<String> optMin = stream.min((val1, val2) -> { return val1.compareTo(val2);});
+		Optional<String> optMax = stream.max((val1, val2) -> {return val1.compareTo(val2);});
 		
-		String minStr = optMin.get();
+		String maxStr = optMax.get();
 		
-		System.out.println("Min String :"+minStr);
-		
-	}
+		System.out.println("Max string :"+maxStr);
+ 	}
 }

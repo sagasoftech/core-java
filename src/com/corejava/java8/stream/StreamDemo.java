@@ -1,4 +1,4 @@
-package com.corejava.java8;
+package com.corejava.java8.stream;
 
 //a simple program to demonstrate the use of stream in java 
 import java.util.*;

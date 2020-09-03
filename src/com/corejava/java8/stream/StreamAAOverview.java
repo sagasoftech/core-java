@@ -1,4 +1,4 @@
-package com.corejava.java8;
+package com.corejava.java8.stream;
 
 public class StreamAAOverview {
 

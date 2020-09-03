@@ -1,13 +1,12 @@
-package com.corejava.java8;
+package com.corejava.java8.stream;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class StreamDistinct {
+public class StreamForEach {
 
-	public static void main(String args[]) {
+	public static void main(String[] args) {
 		List<String> stringList = new ArrayList<String>();
 
 		stringList.add("one");
@@ -16,11 +15,7 @@ public class StreamDistinct {
 		stringList.add("one");
 
 		Stream<String> stream = stringList.stream();
-
-		List<String> distinctStrings = stream
-		        .distinct()
-		        .collect(Collectors.toList());
-
-		System.out.println(distinctStrings);
+		
+		stream.forEach(action -> System.out.println(action));
 	}
 }
