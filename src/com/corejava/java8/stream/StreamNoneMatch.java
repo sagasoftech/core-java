@@ -10,7 +10,9 @@ public class StreamNoneMatch {
 	 * The Java Stream noneMatch() method is a terminal operation that will iterate
 	 * the elements in the stream and return true or false, depending on whether no
 	 * elements in the stream matches the Predicate passed to noneMatch() as
-	 * parameter. The noneMatch() method will return true if no elements are matched
+	 * parameter. 
+	 * 
+	 * The noneMatch() method will return true if no elements are matched
 	 * by the Predicate, and false if one or more elements are matched.
 	 */
 	public static void main(String args[]) {

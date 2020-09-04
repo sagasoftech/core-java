@@ -5,6 +5,13 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
+/**
+ * The Java Stream count() method is a terminal operation which starts the
+ * internal iteration of the elements in the Stream, and counts the elements.
+ * 
+ * @author sagar.dighe
+ *
+ */
 public class StreamCount {
 
 	public static void main(String[] args) {
@@ -14,10 +21,8 @@ public class StreamCount {
 		stringList.add("To kill a muckingbird");
 		stringList.add("Gone with the wind");
 		
-		long count = stringList.stream().flatMap((s) -> {
-			String[] arrStr = s.split(" ");
-			return (Stream<String>) Arrays.asList(arrStr).stream();
-		}).count();
+		long count = stringList.stream().flatMap(s -> Arrays.asList(s.split(" ")).stream())
+							   			.count();
 
 		System.out.println("Word count :"+count);
 	}

@@ -5,6 +5,13 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+/**
+ * The Java Stream interface contains a static method called concat() which can
+ * concatenate two streams into one.
+ * 
+ * @author sagar.dighe
+ *
+ */
 public class StreamConcatenete {
 
 	public static void main(String[] args) {
@@ -23,12 +30,11 @@ public class StreamConcatenete {
 
 		Stream<String> stream2 = stringList2.stream();
 
-		Stream<String> concatStream = Stream.concat(stream1, stream2);
+		Stream.concat(stream1, stream2)
+			  .collect(Collectors.toList())
+			  .stream()
+			  .forEach(System.out::print);
 
-		List<String> stringsAsUppercaseList = concatStream
-		        .collect(Collectors.toList());
-
-		System.out.println(stringsAsUppercaseList);
 	}
 
 }

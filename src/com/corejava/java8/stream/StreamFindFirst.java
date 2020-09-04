@@ -5,6 +5,14 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
 
+/**
+ * The Java Stream findFirst() method finds the first element in the Stream, if
+ * any elements are present in the Stream. The findFirst() method returns an
+ * Optional from which you can obtain the element, if present.
+ * 
+ * @author sagar.dighe
+ *
+ */
 public class StreamFindFirst {
 
 	public static void main(String[] args) {

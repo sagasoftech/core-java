@@ -5,6 +5,14 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+/**
+ * The Java Stream distinct() method is a non-terminal operation that returns a
+ * new Stream which will only contain the distinct elements from the original
+ * stream. Any duplicates will be eliminated.
+ * 
+ * @author sagar.dighe
+ *
+ */
 public class StreamDistinct {
 
 	public static void main(String args[]) {
@@ -17,10 +25,7 @@ public class StreamDistinct {
 
 		Stream<String> stream = stringList.stream();
 
-		List<String> distinctStrings = stream
-		        .distinct()
-		        .collect(Collectors.toList());
+		stream.distinct().collect(Collectors.toList()).forEach(s -> System.out.println(s));
 
-		System.out.println(distinctStrings);
 	}
 }

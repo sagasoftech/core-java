@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
 
-public class StreamFinfAny {
+public class StreamFindAny {
 
 	/*
 	 * The Java Stream findAny() method can find a single element from the Stream.
@@ -20,10 +20,10 @@ public class StreamFinfAny {
 	public static void main(String[] args) {
 		List<String> stringList = new ArrayList<String>();
 
-		stringList.add("one");
-		stringList.add("two");
-		stringList.add("three");
-		stringList.add("one");
+		stringList.add("1one");
+		stringList.add("2two");
+		stringList.add("3three");
+		stringList.add("4one");
 
 		Stream<String> stream = stringList.stream();
 

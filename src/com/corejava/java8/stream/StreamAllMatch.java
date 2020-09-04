@@ -9,9 +9,11 @@ public class StreamAllMatch {
 	/*
 	 * The Java Stream allMatch() method is a terminal operation that takes a single
 	 * Predicate as parameter, starts the internal iteration of elements in the
-	 * Stream, and applies the Predicate parameter to each element. If the Predicate
-	 * returns true for all elements in the Stream, the allMatch() will return true.
-	 * If not all elements match the Predicate, the allMatch() method returns false.
+	 * Stream, and applies the Predicate parameter to each element.
+	 * 
+	 * If the Predicate returns true for all elements in the Stream, the allMatch()
+	 * will return true. If not all elements match the Predicate, the allMatch()
+	 * method returns false.
 	 */
 	public static void main(String[] args) {
 		List<String> stringList = new ArrayList<String>();
@@ -22,9 +24,7 @@ public class StreamAllMatch {
 
 		Stream<String> strStream = stringList.stream();
 
-		boolean allmatch = strStream.allMatch(s -> {
-			return s.startsWith("One");
-		});
+		boolean allmatch = strStream.allMatch(s -> s.startsWith("One"));
 
 		System.out.println("All match :" + allmatch);
 	}
