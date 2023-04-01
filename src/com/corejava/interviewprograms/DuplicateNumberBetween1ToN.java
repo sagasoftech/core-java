@@ -6,6 +6,11 @@ import java.util.List;
  
 public class DuplicateNumberBetween1ToN {
  
+	/**
+	 * This function only works if there is only one duplicate number
+	 * @param numbers
+	 * @return
+	 */
     public int findDuplicateNumber(List<Integer> numbers){
          
         int highestNumber = numbers.size() - 1;
@@ -25,11 +30,11 @@ public class DuplicateNumberBetween1ToN {
      
     public static void main(String a[]){
         List<Integer> numbers = new ArrayList<Integer>();
-        for(int i=1;i<30;i++){
+        for(int i=1;i<=30;i++){
             numbers.add(i);
         }
-        //add duplicate number into the list
-        numbers.add(22);
+        //Add duplicate number into the list
+        numbers.add(18);
         DuplicateNumberBetween1ToN dn = new DuplicateNumberBetween1ToN();
         System.out.println("Duplicate Number: "+dn.findDuplicateNumber(numbers));
     }
