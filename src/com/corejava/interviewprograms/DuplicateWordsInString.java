@@ -22,8 +22,10 @@ public class DuplicateWordsInString {
 	}
 
 	/**
-	 * * Method to find duplicate words in a Sentence or String * @param input
-	 * String * @return set of duplicate words
+	 * Method to find duplicate words in a Sentence or String 
+	 * 
+	 * @param input String
+	 * @return Set of duplicate words
 	 */
 	public static Set<String> duplicateWords(String input) {
 		if (input == null || input.isEmpty()) {

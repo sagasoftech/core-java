@@ -6,15 +6,26 @@ class Animal {
 	}
 }
 
+/**
+ * 
+ * @author sagar
+ *
+ */
 class Dog extends Animal {
+	
+	/*
+	 * We can use the @Override annotation on inherited methods 
+	 * to protect us from this mistake.
+	 */
+	
 	@Override
-//void eatsomething(){System.out.println("eating foods");}//should be eatSomething
+	//void eatsomething(){System.out.println("eating foods");}//should be eatSomething
 	void eatSomething() {
 		System.out.println("eating foods");
 	}
 }
 
-public class OverrideAnnotaion {
+public class OverrideTest {
 
 	public static void main(String args[]) {
 		Animal a = new Dog();

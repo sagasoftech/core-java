@@ -9,7 +9,7 @@ public class DuplicateNumberBetween1ToN {
 	/**
 	 * This function only works if there is only one duplicate number
 	 * @param numbers
-	 * @return
+	 * @return Duplicate Number
 	 */
     public int findDuplicateNumber(List<Integer> numbers){
          

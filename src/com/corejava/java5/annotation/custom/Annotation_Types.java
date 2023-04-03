@@ -1,6 +1,6 @@
-package com.corejava.java5.annotation;
+package com.corejava.java5.annotation.custom;
 
-@interface CustomAnnotation {
+@interface Annotation_Types {
 
 }
 

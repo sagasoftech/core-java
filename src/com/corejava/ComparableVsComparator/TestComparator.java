@@ -14,12 +14,15 @@ public class TestComparator {
 		laps.add(new Laptop("Apple", 8, 1200));
 		laps.add(new Laptop("HP", 12, 700));
 		
-		//Comparator is used when Class we want to sort is not implementing Comparable
-		//Or
-		//We want to change change the sorting logic for Class
-		//e.g.
-		//Laptop list is getting sorted by default using Laptop RAM. However, we have sorted
-		//using Price as below
+		/*
+		 * Comparator is used when Class we want to sort is not implementing Comparable
+		 * Or
+		 * We want to change change the sorting logic for Class
+		 * e.g.
+		 * Laptop list is getting sorted by default using Laptop RAM. However, we have sorted
+		 * using Price as below
+		 * 
+		 */
 		Comparator<Laptop> comp = new Comparator<Laptop>() {
 			public int compare(Laptop l1, Laptop l2) {
 				if(l1.getPrice() > l2.getPrice())
@@ -31,7 +34,9 @@ public class TestComparator {
 			}
 		};
 		
-		//Second parameter is needed in sort method if we want to provide Comparator
+		/*
+		 * Second parameter is needed in sort method if we want to provide Comparator
+		 */
 		Collections.sort(laps, comp);
 		
 		for(Laptop l :laps) {
