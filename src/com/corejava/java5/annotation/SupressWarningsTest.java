@@ -24,7 +24,7 @@ public class SupressWarningsTest extends CustomAnnocation_Documented{
 
 		/*
 		 * If you remove the @SuppressWarnings("unchecked") annotation, it will show
-		 * warning at compile time at line 10, 11, 12 because we are using non-generic collection.
+		 * warning at compile time at line 20, 21, 22 because we are using non-generic collection.
 		 */
 		for (Object obj : list)
 			System.out.println(obj);
