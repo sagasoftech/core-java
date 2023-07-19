@@ -15,17 +15,19 @@ public class DoubleOfFirstEvenNumberGreaterThan {
 		output = list.stream()
 					 .filter(DoubleOfFirstEvenNumberGreaterThan::isGreaterThan3)
 					 .filter(DoubleOfFirstEvenNumberGreaterThan::isEven)
-					 .findFirst()
-					 .map(num -> num * 2);
+					 .map(num -> num * 2)
+					 .findFirst();
 		
 		System.out.println(output.get());
 	}
 	
 	public static boolean isGreaterThan3(int num) {
+		System.out.println("isGreaterThan3: " + num );
 		return num > 3;
 	}
 	
 	public static boolean isEven(int num) {
+		System.out.println("isEven: " + num );
 		return num % 2 == 0;
 	}
 }
