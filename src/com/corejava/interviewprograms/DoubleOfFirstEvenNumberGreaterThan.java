@@ -2,6 +2,7 @@ package com.corejava.interviewprograms;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Predicate;
 
 public class DoubleOfFirstEvenNumberGreaterThan {
 
@@ -11,23 +12,17 @@ public class DoubleOfFirstEvenNumberGreaterThan {
 		
 		Optional<Integer> output = null;
 		
+		Predicate<Integer> isGreaterThan3 = num -> num > 3;
+		Predicate<Integer> isEven = num -> num % 2 == 0;
+		
 		//Declarative style
 		output = list.stream()
-					 .filter(DoubleOfFirstEvenNumberGreaterThan::isGreaterThan3)
-					 .filter(DoubleOfFirstEvenNumberGreaterThan::isEven)
+					 .filter(isGreaterThan3)
+					 .filter(isEven)
 					 .map(num -> num * 2)
 					 .findFirst();
 		
 		System.out.println(output.get());
 	}
 	
-	public static boolean isGreaterThan3(int num) {
-		System.out.println("isGreaterThan3: " + num );
-		return num > 3;
-	}
-	
-	public static boolean isEven(int num) {
-		System.out.println("isEven: " + num );
-		return num % 2 == 0;
-	}
 }
