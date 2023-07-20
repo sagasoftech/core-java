@@ -10,8 +10,10 @@ package com.corejava.constructor;
  * 2. A static field containing its only instance
  * 3. A static factory method for obtaining the instance
  * 4. Make factory method synchronized or add synchronize block
+ * 5. Override clone method and throw exception
+ * 
  */
-public class SingletonClass {
+public class SingletonClass{
 
 	static SingletonClass instance = null;
     private String info = "Initial class info";
@@ -30,6 +32,11 @@ public class SingletonClass {
    
         return instance;
     } 
+    
+    @Override
+    protected Object clone() throws CloneNotSupportedException{
+    	throw new CloneNotSupportedException();
+    }
     
     public String getInfo() {
 		return info;
