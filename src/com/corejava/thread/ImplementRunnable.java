@@ -1,5 +1,10 @@
 package com.corejava.thread;
 
+/*
+ * With Runnable advantage is 
+ * implement another interfaces
+ * extend another classes
+ */
 public class ImplementRunnable implements Runnable{
 
 	private int threadName = 0;
