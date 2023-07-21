@@ -13,6 +13,12 @@ public class MainThread {
 			ImplementRunnable runnable = new ImplementRunnable(i);
 			Thread thread = new Thread(runnable);
 			thread.start();
+			try {
+				thread.join();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 	}
 }
