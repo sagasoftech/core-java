@@ -30,47 +30,38 @@ public class TwoSumEqualsTargetInArray {
 
 	private static int[] twoSum(int[] nums, int target) {
 		
-		int[] result = new int[2];
-				
 		long start = System.currentTimeMillis();
 		for(int i = 0; i < nums.length; i++) {
 			for(int j = i+1; j < nums.length; j++) {
 				if(nums[i]+nums[j] == target) {
-					result[0] = i;
-					result[1] = j;
-					break;
+					return new int[]{i, j};
 				}
 			}
 		}
 		long end = System.currentTimeMillis();
 		System.out.println("Time taken : "+ (end-start) + "ms");	
 		
-		return result;
+		return nums;
 	}
 	
 	private static int[] twoSumFastPerformance(int[] nums, int target) {
 		
-		int[] result = new int[2];
-		
 		HashMap<Integer, Integer> holder = new HashMap<>();
 		
-		/*{3, 2, 4, 1}
+		/*
 		 * Hold index of value in map and with required value to sum up
 		 * HashMap[value_required_to_add, current_index]
 		 */
 		long start = System.currentTimeMillis();
 		for(int i = 0; i < nums.length; i++) {
 			if(holder.containsKey(target - nums[i])) {
-				result[0] = i;
-				result[1] = holder.get(target - nums[i]);
-				break;
-			}else {
-				holder.put(nums[i], i);
+				return new int[] {i, holder.get(target - nums[i])};
 			}
+			holder.put(nums[i], i);
 		}
 		long end = System.currentTimeMillis();
 		System.out.println("Time taken : "+ (end-start) + "ms");	
 		
-		return result;
+		return nums;
 	}
 }
