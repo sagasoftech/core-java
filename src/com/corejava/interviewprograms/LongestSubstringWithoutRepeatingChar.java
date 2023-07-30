@@ -29,6 +29,7 @@ public class LongestSubstringWithoutRepeatingChar {
 	    System.out.println("The length of the longest " +
 	                       "non-repeating character " +
 	                       "substring is " + len);
+	    len = longestUniqueSubstrLinearTime(str);
 	}
 
 	private static int longestUniqueSubstr(String str) {
@@ -54,4 +55,36 @@ public class LongestSubstringWithoutRepeatingChar {
 		System.out.println("Time taken : "+ (end-start) + "ms");	
 		return maxString.length();
 	}
+	
+	private static int longestUniqueSubstrLinearTime(String str) {
+		long start = System.currentTimeMillis();
+		
+		String longestStr = "";
+		int maxLength = 0;
+		
+		if(str.isEmpty()) {
+			return maxLength;
+		}
+		if(str.length() == 1) {
+			return maxLength + 1;
+		}
+		
+		for(char c: str.toCharArray()) {
+			
+			String currChar = String.valueOf(c);
+			
+
+            // If string already contains the character
+            // Then substring after repeating character
+			if(longestStr.contains(currChar)) {
+				longestStr = longestStr.substring(longestStr.indexOf(currChar) + 1);
+			}
+			longestStr = longestStr + currChar;
+			maxLength = Math.max(maxLength, longestStr.length());
+		}
+		long end = System.currentTimeMillis();
+		System.out.println("Time taken : "+ (end-start) + "ms");
+		
+		return maxLength;
+	}	
 }
