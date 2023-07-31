@@ -27,6 +27,10 @@ public class RemoveElementAndShiftArray {
 		//Result: Array: [0, 1, 3, 0, 4, -1, -1, -1]
 		System.out.println("Length after remove: " + removeElement(nums, val));
 		System.out.println("Array: " + Arrays.toString(nums));
+		
+		int[] nums2 = new int[] {0,1,2,2,3,0,4,2};
+		System.out.println("Length after remove: " + removeElementLinearTime(nums2, val));
+		System.out.println("Array: " + Arrays.toString(nums2));
 	}
 	
     public static int removeElement(int[] nums, int val) {
@@ -46,5 +50,17 @@ public class RemoveElementAndShiftArray {
             }
         }
         return nums.length - counter;
+    }
+    
+    public static int removeElementLinearTime(int[] nums, int val) {
+        int c = 0;
+        for(int i = 0; i < nums.length; i++){
+            if(nums[i] != val){
+                nums[c] = nums[i];
+                c++;
+            }
+        }
+        
+        return c;
     }
 }
