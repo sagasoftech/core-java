@@ -14,10 +14,12 @@ package com.corejava.interviewprograms;
 public class BestTimeToBuyAndSellStock {
 
 	public static void main(String[] args) {
-		int[] prices = new int[] {7,1,5,3,6,4};
+		int[] prices = new int[] {7,1,5,3,8,4};
 		
-		//Result: Buy=2, Sell=5
+		//Result: Buy=2, Sell=5, Profit: 8-1=7
 		System.out.println("Profit: "+ maxProfit(prices));
+		
+		System.out.println("Profit: "+ maxProfitLinearTime(prices));
 	}
 	
     public static int maxProfit(int[] prices) {
@@ -39,5 +41,27 @@ public class BestTimeToBuyAndSellStock {
     	System.out.println("sellDay: " + sellDay);
     	
         return profit;
+    }
+    
+    public static int maxProfitLinearTime(int[] prices) {
+    	int buyDay = 1;
+    	int sellDay = 2;
+    	
+        int min = Integer.MAX_VALUE, max_profit = 0;
+        for(int i=0;i<prices.length;i++){
+            if(prices[i]<min){
+                min = prices[i];
+                buyDay = i+1;
+            }
+            if(max_profit < prices[i]-min) {
+            	sellDay = i+1;
+            }
+            max_profit = Math.max(max_profit,prices[i]-min);
+        }
+        
+    	System.out.println("buyDay: " + buyDay);
+    	System.out.println("sellDay: " + sellDay);
+    	
+        return max_profit;
     }
 }
