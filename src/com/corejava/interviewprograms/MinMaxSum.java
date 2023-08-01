@@ -27,8 +27,16 @@ public class MinMaxSum {
 		
 
 		miniMaxSum(myList);
-		//traversing using Iterator
-		Iterator<Integer> it = myList.iterator();
+		
+		List<Integer> myList2 = new ArrayList<>();
+		myList2.add(256741038);
+		myList2.add(623958417);
+		myList2.add(467905213);
+		myList2.add(938071625);
+		myList2.add(714532089);
+		
+
+		miniMaxSumConcise(myList2);
 	}
 	
 	public static void miniMaxSum(List<Integer> arr) {
@@ -48,5 +56,27 @@ public class MinMaxSum {
 				 //.reduce(0, (a, b) -> a + b);
 				 .reduce(0L, Long::sum);
 	    System.out.println(min + " "+ max);
+	}
+	
+	public static void miniMaxSumConcise(List<Integer> arr) {
+	    
+        long sum = 0;
+        long max = arr.get(0);
+        for (int i =0;i<5;i++){
+            sum+=arr.get(i);
+        } 
+        long min = sum;
+
+        for (int i = 0;i<5;i++){
+            long temp = sum;
+            temp = temp - arr.get(i);
+            if (temp < min){
+                min = temp;
+            }
+            if (temp > max){
+                max = temp;
+            }
+        }
+        System.out.println(min + " " + max);
 	}
 }
