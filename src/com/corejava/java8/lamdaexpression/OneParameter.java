@@ -16,6 +16,10 @@ public class OneParameter{
 			System.out.println(carName);
 		};
 		v2.getCar("Omni");
+		
+		//without brackets
+		Vehicle v3 = carName -> System.out.println(carName);
+		v3.getCar("Sonata");
 	}
 }
 
