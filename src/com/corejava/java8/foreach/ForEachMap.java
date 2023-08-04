@@ -19,6 +19,7 @@ public class ForEachMap {
 		
 		System.out.println("Stream API:");
 		student.keySet().stream().forEach(k -> System.out.println(k + ":" + student.get(k)));
+		student.values().stream().forEach(System.out::println);
 		
 		System.out.println("MapEntry:");
 	    for(Entry<Integer, String> entry: student.entrySet()) {
