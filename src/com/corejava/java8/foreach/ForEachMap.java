@@ -17,8 +17,9 @@ public class ForEachMap {
 		System.out.println("forEach:");
 		student.forEach((key, value) -> System.out.println(key + ":" + value));
 		
-		System.out.println("Stream API:");
+		System.out.println("Stream API KeySet:");
 		student.keySet().stream().forEach(k -> System.out.println(k + ":" + student.get(k)));
+		System.out.println("Stream API Vlues:");
 		student.values().stream().forEach(System.out::println);
 		
 		System.out.println("MapEntry:");
@@ -36,11 +37,18 @@ public class ForEachMap {
 	    	System.out.println("Value :" + value);
 	    }
 	    
-	    System.out.println("Iterator: ");
+	    System.out.println("Iterator EntrySet: ");
 	    Iterator<Entry<Integer,String>> itr = student.entrySet().iterator();
 	    while(itr.hasNext()){
 	    	Entry<Integer,String> entry = itr.next();
 	    	System.out.println(entry.getKey() + ":" + entry.getValue());
 	    }
+	    
+	    System.out.println("Iterator KeySet: ");
+	    Iterator<Integer> itr2 = student.keySet().iterator();
+	    while(itr2.hasNext()){
+	    	Integer key = itr2.next();
+	    	System.out.println(key + ":" + student.get(key));
+	    }	    
 	}
 }
