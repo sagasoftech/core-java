@@ -1,5 +1,8 @@
 package com.corejava.interviewprograms;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class FibbonacciNthNumber {
 
 	public static void main(String[] args) {
@@ -8,7 +11,8 @@ public class FibbonacciNthNumber {
 		System.out.println(getFibAt(7));
 		System.out.println(getFibAt(8));
 		System.out.println(getFibAt(9));
-		System.out.println(getFibAt(50));
+		//System.out.println(getFibAt(50));
+		System.out.println(getFibAtDynamic(50));
 	}
 	
 	/*
@@ -23,4 +27,19 @@ public class FibbonacciNthNumber {
 		return getFibAt(n-1) + getFibAt(n-2);
 	}
 	
+	/*
+	 * Dynamic Programming
+	 * 
+	 * Time Complexity: O(2n) = O(n)
+	 * Space Complexity: O(n)
+	 */
+	
+	private static Map<Integer, Integer> hmFib = new HashMap<>();
+	public static int getFibAtDynamic(int n) {
+		if(hmFib.containsKey(n)) return hmFib.get(n);
+		if(n<=2) return 1;
+		hmFib.put(n, getFibAtDynamic(n-1) + getFibAtDynamic(n-2));
+		
+		return hmFib.get(n);
+	}
 }
