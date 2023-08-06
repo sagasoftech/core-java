@@ -10,6 +10,8 @@ public class TimeComplexity {
 		complexity_2(5);
 		System.out.println("complexity_3");
 		complexity_3(5);
+		System.out.println("complexity_4");
+		complexity_4(5);
 	}
 	
 	/*
@@ -29,7 +31,7 @@ public class TimeComplexity {
 	public static void complexity_2(int n) {
 		System.out.println(n);
 		if(n <= 1) return;
-		complexity_1(n-2);
+		complexity_2(n-2);
 	}
 	
 	/*
@@ -39,7 +41,18 @@ public class TimeComplexity {
 	public static void complexity_3(int n) {
 		System.out.println(n);
 		if(n <= 1) return;
-		complexity_1(n-1);
-		complexity_1(n-1);
+		complexity_3(n-1);
+		complexity_3(n-1);
+	}
+	
+	/*
+	 * Time Complexity: O(2^n/2) = O(2^n)
+	 * Space Complexity: O(n/2) = O(n)
+	 */
+	public static void complexity_4(int n) {
+		System.out.println(n);
+		if(n <= 1) return;
+		complexity_4(n-2);
+		complexity_4(n-2);
 	}
 }
