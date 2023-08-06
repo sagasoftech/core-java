@@ -8,9 +8,12 @@ public class FibbonacciNthNumber {
 		System.out.println(getFibAt(7));
 		System.out.println(getFibAt(8));
 		System.out.println(getFibAt(9));
+		System.out.println(getFibAt(50));
 	}
 	
 	/*
+	 * Recursive Programming
+	 * 
 	 * Time Complexity: O(2^n)
 	 * Space Complexity: O(n)
 	 */
@@ -19,4 +22,5 @@ public class FibbonacciNthNumber {
 		if(n<=2) return 1;
 		return getFibAt(n-1) + getFibAt(n-2);
 	}
+	
 }
