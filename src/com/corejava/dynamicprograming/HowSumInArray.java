@@ -61,7 +61,7 @@ public class HowSumInArray {
 	
 	/*
 	 * Time Complexity: O(n*m^2)
-	 * Space Complexity: O(m)
+	 * Space Complexity: O(m^2)
 	 */
 	public static List<Integer> howSumMemoUse(int targetSum, int[] numbers, Map<Integer, List<Integer>> hmTargetArr) {
 		
