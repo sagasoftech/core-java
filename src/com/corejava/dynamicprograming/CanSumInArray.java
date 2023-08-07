@@ -40,7 +40,7 @@ public class CanSumInArray {
 	}
 	
 	/*
-	 * Time Complexity: O(n*m)
+	 * Time Complexity: O(m*n)
 	 * Space Complexity: O(m)
 	 */
 	private static Map<Integer, Boolean> hmTargetSum = new HashMap<>();

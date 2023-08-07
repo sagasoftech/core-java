@@ -34,7 +34,7 @@ public class GridTraveller {
 	}
 	
 	/*
-	 * Time Complexity: O(n*m)
+	 * Time Complexity: O(m*n)
 	 * Space Complexity: O(n+m)
 	 */
 	private static Map<String, Integer> hmGridValue = new HashMap<>();
