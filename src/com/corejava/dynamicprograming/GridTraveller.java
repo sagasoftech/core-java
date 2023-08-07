@@ -1,9 +1,13 @@
 package com.corejava.dynamicprograming;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class GridTraveller {
 
 	public static void main(String[] args) {
 		System.out.println("No of ways to travel: " + gridTraveler(2, 4));
+		System.out.println("No of ways to travel (Fast): " + gridTravelerFast(18, 18));
 	}
 	
 	/*
@@ -27,5 +31,21 @@ public class GridTraveller {
 		if(gridX == 1 && gridY == 1) return 1;
 		if(gridX == 0 || gridY == 0) return 0;
 		return gridTraveler(gridX-1, gridY) + gridTraveler(gridX, gridY-1);
+	}
+	
+	/*
+	 * Time Complexity: O(x*y)
+	 * Space Complexity: O(x+y)
+	 */
+	private static Map<String, Integer> hmGridValue = new HashMap<>();
+	public static int gridTravelerFast(int gridX, int gridY) {
+		String key = gridX+"-"+gridY;
+		if(hmGridValue.containsKey(key)) return hmGridValue.get(key);
+		
+		if(gridX == 1 && gridY == 1) return 1;
+		if(gridX == 0 || gridY == 0) return 0;
+		
+		hmGridValue.put(key, gridTravelerFast(gridX-1, gridY) + gridTravelerFast(gridX, gridY-1));
+		return hmGridValue.get(key);
 	}
 }
