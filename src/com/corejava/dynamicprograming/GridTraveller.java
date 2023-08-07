@@ -23,8 +23,8 @@ public class GridTraveller {
 	 * x1y4 x2y4 x3y4
 	 * 
 	 * 
-	 * Time Complexity: O(2^x+y)
-	 * Space Complexity: O(x+y)
+	 * Time Complexity: O(2^n+m)
+	 * Space Complexity: O(n+m)
 	 */
 	public static int gridTraveler(int gridX, int gridY) {
 		
@@ -34,8 +34,8 @@ public class GridTraveller {
 	}
 	
 	/*
-	 * Time Complexity: O(x*y)
-	 * Space Complexity: O(x+y)
+	 * Time Complexity: O(n*m)
+	 * Space Complexity: O(n+m)
 	 */
 	private static Map<String, Integer> hmGridValue = new HashMap<>();
 	public static int gridTravelerFast(int gridX, int gridY) {
