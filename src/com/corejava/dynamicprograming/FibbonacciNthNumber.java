@@ -1,4 +1,4 @@
-package com.corejava.interviewprograms;
+package com.corejava.dynamicprograming;
 
 import java.util.HashMap;
 import java.util.Map;

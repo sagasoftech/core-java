@@ -1,4 +1,4 @@
-package com.corejava.java8.miscellaneous;
+package com.corejava.dynamicprograming;
 
 public class TimeComplexity {
 
