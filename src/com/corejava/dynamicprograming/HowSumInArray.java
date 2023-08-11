@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /*
  * Write a function 'howSum(targetSum, numbers)' that takes in a targetSum and an array of numbers as arguments.
@@ -28,11 +29,16 @@ public class HowSumInArray {
 		System.out.println(howSum(7 , new int[]{2, 4}));
 		System.out.println(howSum(0 , new int[]{1, 3, 2}));
 		
+		hmTargetArr = new HashMap<>();
 		System.out.println(howSumMemoUse(7 , new int[]{5, 3, 4, 7}));
+		hmTargetArr = new HashMap<>();
 		System.out.println(howSumMemoUse(8 , new int[]{2, 3, 4}));
+		hmTargetArr = new HashMap<>();
 		System.out.println(howSumMemoUse(7 , new int[]{2, 4}));
+		hmTargetArr = new HashMap<>();
 		System.out.println(howSumMemoUse(0 , new int[]{1, 3, 2}));
 		
+		hmTargetArr = new HashMap<>();
 		System.out.println(howSumMemoUse(300 , new int[]{7, 14}));
 		
 		
@@ -63,7 +69,9 @@ public class HowSumInArray {
 	 * Time Complexity: O(n*m^2)
 	 * Space Complexity: O(m^2)
 	 */
-	public static List<Integer> howSumMemoUse(int targetSum, int[] numbers, Map<Integer, List<Integer>> hmTargetArr) {
+	private static Map<Integer, List<Integer>> hmTargetArr = null;
+	
+	public static List<Integer> howSumMemoUse(int targetSum, int[] numbers) {
 		
 		if(hmTargetArr.containsKey(targetSum)) return hmTargetArr.get(targetSum);
 		
@@ -72,10 +80,12 @@ public class HowSumInArray {
 		
 		for(int num = 0; num < numbers.length; num++) {
 			int remainder = targetSum - numbers[num];
-			List<Integer> remainderResult = howSumMemoUse(remainder, numbers, hmTargetArr);
+			List<Integer> remainderResult = howSumMemoUse(remainder, numbers);
 			if(remainderResult != null) {
-				remainderResult.add(numbers[num]);
-				hmTargetArr.put(targetSum, remainderResult);
+				List<Integer> remainderResultClone = remainderResult.stream().map(i -> i).collect(Collectors.toList());
+				remainderResultClone.add(numbers[num]);
+				
+				hmTargetArr.put(targetSum, remainderResultClone);
 				return hmTargetArr.get(targetSum);
 			}
 		}
@@ -84,7 +94,4 @@ public class HowSumInArray {
 		return null;
 	}
 	
-	public static List<Integer> howSumMemoUse(int targetSum, int[] numbers) {
-		return howSumMemoUse(targetSum, numbers, new HashMap<>());
-	}
 }
