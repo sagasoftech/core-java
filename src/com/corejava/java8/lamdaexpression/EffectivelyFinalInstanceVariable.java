@@ -1,4 +1,4 @@
-package com.corejava.java8.lamdaexpression.collections;
+package com.corejava.java8.lamdaexpression;
 
 public class EffectivelyFinalInstanceVariable {
 
