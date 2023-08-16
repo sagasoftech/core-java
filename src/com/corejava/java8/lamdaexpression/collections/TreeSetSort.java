@@ -6,6 +6,8 @@ import java.util.TreeSet;
 public class TreeSetSort {
 
 	public static void main(String[] args) {
+		
+		//Comparator added here will sort in descending order 
         Set<Integer> h = new TreeSet<Integer>((o1, o2) -> o1 > o2 ? -1 :
 			 											o1 < o2? 1: 0);
 		 h.add(850);
